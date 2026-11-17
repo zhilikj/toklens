@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toklens"
+version = "0.1.0"
+description = "看清大模型请求里的 token 花在哪：固定前缀、对话部分、上下文策略对比"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["llm", "token", "tiktoken", "openai", "cost", "context-window", "prompt-cache"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Utilities",
+]
+dependencies = ["tiktoken>=0.5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+toklens = "toklens.cli:main"
+
+[project.urls]
+Homepage = "https://www.zhilikj.cn"
+Repository = "https://github.com/zhilikj/toklens"
+
+[tool.setuptools.packages.find]
+include = ["toklens*"]
